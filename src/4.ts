@@ -3,10 +3,10 @@
 // значення властивості signature.
 
 class Key {
-    private signature: number
-    constructor (){
-        this.signature = Math.random()
-    }
+    private signature: number = Math.random();
+    // constructor (){
+    //     this.signature = Math.random()
+    // }
 
     getSignature():number{
        return this.signature
@@ -30,12 +30,12 @@ class Person {
 // абстрактний метод OpenDoor, який приймає об'єкт класу Key.
 
 abstract class House {
-public door:boolean;
+public door:boolean = false;
 public tenants:Person[]=[];
 
-constructor(public key: Key) {
-    this.door=false
-}
+// constructor(public key: Key) {
+//     this.door=false
+// }
 
 comeIn(person:Person):void{
     if(this.door){
@@ -50,10 +50,10 @@ this.tenants.push(person)
 // openDoor у цьому класі. Якщо ключ, переданий цьому методу, збігається з ключем, збереженим як key, то двері відчиняються.
 
 class MyHouse extends House{
-
-  constructor ( public key: Key){
-    super(key)
-  }
+  
+//   constructor ( public key: Key){
+//     super(key)
+//   }
 
       openDoor(key: Key): void {
      if(key.getSignature()===this.key.getSignature()){
